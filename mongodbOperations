@@ -1,0 +1,7 @@
+ db.studentinfo.insertMany([{name:'abc',marks:34,age:18},{name:'def',marks:45,age:23},{name:'ijk',marks:50,age:19}])
+ 
+db.studentinfo.aggregate([{$group:{_id:0,total:{$sum:'$marks'}}}])
+db.studentinfo.aggregate([{$group:{_id:0,average:{$avg:'$marks'}}}])
+db.studentinfo.aggregate([{$group:{_id:0,average:{$min:'$marks'}}}])
+db.studentinfo.aggregate([{$group:{_id:0,average:{$min:'$age'}}}])
+db.studentinfo.aggregate([{$group:{_id:0,average:{$last:'$age'}}}])
